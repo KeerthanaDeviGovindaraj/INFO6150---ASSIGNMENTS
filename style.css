@@ -1,0 +1,284 @@
+/* Reset & basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  background: #ffffff;
+  color: #333;
+}
+
+/* Global containers */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: #1e3a8a; /* deep blue accent */
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+/* Header */
+header {
+  background: #f8fafc; /* very light gray */
+  border-bottom: 2px solid #e2e8f0;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #0f172a;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #1e40af;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #2563eb;
+}
+
+/* Hero */
+.hero {
+  background: url("assets/images/hero.png") no-repeat center center/cover;
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #0f172a;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  color: #334155;
+}
+
+.btn {
+  display: inline-block;
+  background: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #2563eb;
+}
+
+/* Table */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+th, td {
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background: #e0f2fe; /* pale blue */
+  color: #1e3a8a;
+}
+
+tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* Articles */
+article {
+  background: #ffffff;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+section#listings {
+  background: #f0f9ff;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+section#post {
+  background: #ffffff;
+  padding: 2rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+section#how {
+  background: #f0fdf4;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+
+figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Aside */
+aside {
+  background: #f1f5f9;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+aside h3, aside h4 {
+  color: #0f172a;
+  margin-top: 1rem;
+}
+
+aside ul {
+  list-style: disc inside;
+  margin: 0.5rem 0 1rem;
+}
+
+aside a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+label {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+input, textarea, select {
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input:focus, textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 2px #bfdbfe;
+}
+
+button {
+  background: #10b981; /* teal */
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #059669;
+}
+
+/* Media: audio & video */
+audio, video {
+  margin: 1rem 0;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  background: #f8fafc;
+  color: #334155;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 2px solid #e2e8f0;
+}
+
+footer a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  header h1 {
+    text-align: center;
+  }
+}
