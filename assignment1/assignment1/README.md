@@ -1,2 +1,0 @@
-# MoveOutSaleHub
-Assignment 1
