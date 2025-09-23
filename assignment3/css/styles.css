@@ -36,6 +36,39 @@ tbody tr:hover {
     background-color: #eaf4ff;
 }
 
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.modal.active {
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.modal-footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
 button {
     padding: 6px 12px;
     border-radius: 6px;
@@ -43,6 +76,10 @@ button {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    border: none;
+    margin: 20px ;
+    position: relative;
+
 }
 
 button:hover {
@@ -86,8 +123,8 @@ button:hover {
     cursor: pointer;
     display: inline-block;
     transition: transform 0.2s ease-in-out;
+    color: #4caf50;
 }
-
 
 .arrow.expanded {
     transform: rotate(180deg);
@@ -100,7 +137,6 @@ button:hover {
     font-size: 14px;
     border-top: 2px solid #eee;
 }
-
 
 .modal {
     position: fixed;
@@ -137,4 +173,31 @@ button:hover {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;   
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;      
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .button-container {
+        display: flex;
+        flex-direction: column;   
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .button-container button {
+        width: 80%;               
+        margin: 5px 0;            
+    }
 }
