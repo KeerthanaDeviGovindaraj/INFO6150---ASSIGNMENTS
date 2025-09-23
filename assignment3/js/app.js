@@ -41,7 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
             <td class="editCol"></td>
         `;
         renumberStudents();
-        alert(`Student ${studentCount} Record added successfully`);
+        alert(`Student ${studentCount} Record added successfully`);}
+            catch (err) {
+                            alert ("Error : Failed. Please try again")}
     });
 
     tableBody.addEventListener("change", (e) => {
