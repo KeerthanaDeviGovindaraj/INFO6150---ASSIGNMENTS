@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     addBtn.addEventListener("click", () => {
+        try {
         const row = tableBody.insertRow();
         row.innerHTML = `
             <td><input type="checkbox" class="rowCheckbox"></td>
@@ -43,7 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
         renumberStudents();
         alert(`Student ${studentCount} Record added successfully`);}
             catch (err) {
-                            alert ("Error : Failed. Please try again")}
+                            alert ("Error : Failed. Please try again");
+            }
     });
 
     tableBody.addEventListener("change", (e) => {
