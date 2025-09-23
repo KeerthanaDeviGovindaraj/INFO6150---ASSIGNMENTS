@@ -2,6 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const tableBody = document.querySelector("#studentTable tbody");
     const submitBtn = document.getElementById("submitBtn");
     const addBtn = document.getElementById("addBtn");
+    const editModal = document.getElementById("editModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const editInput = document.getElementById("editInput");
+    const modalOk = document.getElementById("modalOk");
+    const modalCancel = document.getElementById("modalCancel");
+
     let studentCount = 3;
 
     function updateSubmitButton() {
@@ -15,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-   function renumberStudents() {
+    function renumberStudents() {
         [...tableBody.rows].forEach((row, i) => {
             if (!row.classList.contains("detailsRow")) {
                 row.cells[2].innerText = "Student " + (i + 1);
@@ -27,25 +33,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addBtn.addEventListener("click", () => {
         try {
-        const row = tableBody.insertRow();
-        row.innerHTML = `
-            <td><input type="checkbox" class="rowCheckbox"></td>
-            <td><span class="arrow">&#x25BC;</span></td>
-            <td>Student ${studentCount + 1}</td>
-            <td>Teacher ${studentCount + 1}</td>
-            <td>Approved</td>
-            <td>Fall</td>
-            <td>TA</td>
-            <td>${Math.floor(10000 + Math.random() * 90000)}</td>
-            <td>100%</td>
-            <td class="deleteCol"></td>
-            <td class="editCol"></td>
-        `;
-        renumberStudents();
-        alert(`Student ${studentCount} Record added successfully`);}
-            catch (err) {
-                            alert ("Error : Failed. Please try again");
-            }
+            const row = tableBody.insertRow();
+            row.innerHTML = `
+                <td><input type="checkbox" class="rowCheckbox"></td>
+                <td><span class="arrow">&#x25BC;</span></td>
+                <td>Student ${studentCount + 1}</td>
+                <td>Teacher ${studentCount + 1}</td>
+                <td>Approved</td>
+                <td>Fall</td>
+                <td>TA</td>
+                <td>${Math.floor(10000 + Math.random() * 90000)}</td>
+                <td>100%</td>
+                <td class="deleteCol"></td>
+                <td class="editCol"></td>
+            `;
+            renumberStudents();
+            alert(`Student ${studentCount} Record added successfully`);
+        } catch (err) {
+            alert("Error: Failed. Please try again");
+        }
     });
 
     tableBody.addEventListener("change", (e) => {
@@ -79,13 +85,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (e.target.classList.contains("editBtn")) {
-            const row = e.target.closest("tr");
-            const studentName = row.cells[2].innerText;
-            const newData = prompt(`Edit details of ${studentName}:`, "");
-            if (newData && newData.trim() !== "") {
-                alert(`${studentName} data updated successfully`);
-            }
+    const row = e.target.closest("tr");
+    const studentName = row.cells[2].innerText;
+
+    modalTitle.innerText = `Edit details of ${studentName}`;
+    editInput.value = ""; 
+    editModal.classList.add("active");
+
+    modalOk.onclick = () => {
+        if (editInput.value.trim() !== "") {
+            alert(`${studentName} data updated successfully`);
         }
+        editModal.classList.remove("active");
+    };
+
+    modalCancel.onclick = () => {
+        editModal.classList.remove("active");
+    };
+}
+
 
         if (e.target.classList.contains("arrow")) {
             const row = e.target.closest("tr");
@@ -94,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (nextRow && nextRow.classList.contains("detailsRow")) {
                 nextRow.remove();
-                e.target.innerHTML = "&#x25BC;"; // down arrow
+                e.target.innerHTML = "&#x25BC;"; 
             } else {
                 const detailsRow = tableBody.insertRow(row.rowIndex);
                 detailsRow.classList.add("detailsRow");
@@ -108,8 +126,29 @@ document.addEventListener("DOMContentLoaded", () => {
                         Award Status: A
                     </td>
                 `;
-                e.target.innerHTML = "&#x25B2;"; // up arrow
+                e.target.innerHTML = "&#x25B2;"; 
             }
         }
+    });
+
+    submitBtn.addEventListener("click", () => {
+        const checkedRows = document.querySelectorAll(".rowCheckbox:checked");
+        if (checkedRows.length === 0) {
+            alert("No rows selected!");
+            return;
+        }
+
+        const studentNames = [];
+        checkedRows.forEach(checkbox => {
+            const r = checkbox.closest("tr");
+            studentNames.push(r.cells[2].innerText);
+            checkbox.checked = false;
+            r.classList.remove("highlight");
+            r.querySelector(".deleteCol").innerHTML = "";
+            r.querySelector(".editCol").innerHTML = "";
+        });
+
+        alert(`Submitted awards for: ${studentNames.join(", ")}`);
+        updateSubmitButton();
     });
 });
