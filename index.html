@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 3 - Dynamic Data Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+
+</head>
+<body>
+    <h2>Keerthana Devi Govindaraj - NUID: 002472189</h2>
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th></th>
+                <th>STUDENT</th>
+                <th>ADVISOR</th>
+                <th>AWARD STATUS</th>
+                <th>SEMESTER</th>
+                <th>TYPE</th>
+                <th>BUDGET #</th>
+                <th>PERCENTAGE</th>
+                <th>DELETE</th>
+                <th>EDIT</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" class="rowCheckbox"></td>
+                
+                <td><span class="arrow">&#x25BC;</span></td>
+                <td>Student 1</td>
+                <td>Teacher 1</td>
+                <td>Approved</td>
+                <td>Fall</td>
+                <td>TA</td>
+                <td>12345</td>
+                <td>100%</td>
+                <td class="deleteCol"></td>
+                <td class="editCol"></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="rowCheckbox"></td>
+                <td><span class="arrow">&#x25BC;</span></td>
+                <td>Student 2</td>
+                <td>Teacher 2</td>
+                <td>Approved</td>
+                <td>Fall</td>
+                <td>TA</td>
+                <td>23456</td>
+                <td>70%</td>
+                <td class="deleteCol"></td>
+                <td class="editCol"></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="rowCheckbox"></td>
+                <td><span class="arrow">&#x25BC;</span></td>
+                <td>Student 3</td>
+                <td>Teacher 3</td>
+                <td>Approved</td>
+                <td>Fall</td>
+                <td>TA</td>
+                <td>34567</td>
+                <td>64%</td>
+                <td class="deleteCol"></td>
+                <td class="editCol"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="submitBtn" disabled>SUBMIT SELECTED AWARDS</button>
+    <button id="addBtn">ADD NEW STUDENT</button>
+    <script src="js/app.js"></script>
+</body>
+</html>

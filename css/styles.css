@@ -1,0 +1,250 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background: #f3f4f6;
+    color: #111827;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+}
+
+thead {
+    background: linear-gradient(90deg, #2563eb, #1e40af);
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.arrow {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+    color: #22c55e;
+}
+th, td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+tbody tr:hover {
+    background-color: #eff6ff;
+    transition: background 0.2s ease-in-out;
+}
+
+.highlight {
+
+    background-color: #fef3c7 !important;
+    transition: background 0.3s ease-in-out;
+}
+
+
+button {
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: none;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.deleteBtn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.deleteBtn:hover {
+    background-color: #c0392b;
+}
+
+.editBtn {
+    background-color: #3498db;
+    color: white;
+}
+
+.editBtn:hover {
+    background-color: #2c80b4;
+}
+
+#submitBtn:disabled {
+    background-color: #b0b0b0;
+    cursor: not-allowed;
+}
+
+#submitBtn.enabled {
+    background-color: #ff9800;
+    color: white;
+    box-shadow: 0 0 6px rgba(255, 152, 0, 0.6);
+}
+
+.highlight {
+    background-color: #fff8b3 !important;
+}
+
+.arrow {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+
+.arrow.expanded {
+    transform: rotate(180deg);
+}
+
+.detailsRow td {
+    background-color: #fefefe;
+    text-align: left;
+    padding: 16px;
+    font-size: 14px;
+    border-top: 2px solid #eee;
+}
+
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.modal.active {
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.modal-footer {
+    text-align: right;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (min-width: 1025px) {
+    body {
+        margin: 40px;
+        font-size: 16px;
+    }
+
+    table {
+        font-size: 15px;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+
+    .modal-content {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        margin: 30px;
+        font-size: 15px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .modal-content {
+        width: 340px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        margin: 15px;
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        margin: 10px;
+        font-size: 13px;
+    }
+
+    table {
+        font-size: 12px;
+        box-shadow: none;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 12px;
+        width: 100%; 
+        margin-bottom: 6px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 16px;
+    }
+}
