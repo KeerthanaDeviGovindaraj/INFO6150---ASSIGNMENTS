@@ -88,7 +88,7 @@ button:hover {
     transition: transform 0.2s ease-in-out;
 }
 
-/* rotate arrow when expanded */
+
 .arrow.expanded {
     transform: rotate(180deg);
 }
@@ -101,7 +101,7 @@ button:hover {
     border-top: 2px solid #eee;
 }
 
-/* modal for edit */
+
 .modal {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
