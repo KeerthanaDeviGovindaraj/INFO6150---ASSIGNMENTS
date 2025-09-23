@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>Assignment 3 - Dynamic Data Management</title>
     <link rel="stylesheet" href="css/styles.css">
+  
 </head>
 <body>
     <h2>Keerthana Devi Govindaraj - NUID: 002472189</h2>
     <table id="studentTable">
+    <caption> Student Award Records</caption>
         <thead>
             <tr>
                 <th>Select</th>
@@ -46,7 +48,7 @@
                 <td>Fall</td>
                 <td>TA</td>
                 <td>23456</td>
-                <td>100%</td>
+                <td>70%</td>
                 <td class="deleteCol"></td>
                 <td class="editCol"></td>
             </tr>
@@ -59,14 +61,28 @@
                 <td>Fall</td>
                 <td>TA</td>
                 <td>34567</td>
-                <td>100%</td>
+                <td>85%</td>
                 <td class="deleteCol"></td>
                 <td class="editCol"></td>
             </tr>
         </tbody>
     </table>
+
+    <div id="editModal" class="modal">
+    <div class="modal-content">
+    <div class="modal-header" id="modalTitle"></div>
+    <input type="text" id="editInput" placeholder="Enter new data">
+    <div class="modal-footer">
+      <button id="modalOk">OK</button>
+      <button id="modalCancel">Cancel</button>
+    </div>
+    </div>
+    </div>
+
     <button id="submitBtn" disabled>SUBMIT SELECTED AWARDS</button>
-    <button id="addBtn">Add New Student</button>
+    <button id="addBtn">ADD NEW STUDENT</button>
     <script src="js/app.js"></script>
 </body>
+</html>
+
 </html>
