@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function renumberStudents() {
+   function renumberStudents() {
         [...tableBody.rows].forEach((row, i) => {
             if (!row.classList.contains("detailsRow")) {
                 row.cells[2].innerText = "Student " + (i + 1);
