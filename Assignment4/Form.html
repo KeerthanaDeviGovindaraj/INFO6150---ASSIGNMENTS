@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <link rel="stylesheet" href="styles.css">
+ </head>
+ <body>
+ <div id="container">
+	 <main>
+
+	 <div style="text-align: right; margin-bottom: 20px;">
+		<button type="button" id="aiAssistantBtn" class="ai-assistant-btn">
+			<span>💬</span> AI Assistant
+		</button>
+	 </div>
+
+	 <div id="aiChatbot" class="chatbot-modal">
+		<div class="chatbot-container">
+			<div class="chatbot-header">
+				<h3>AI Assistant - Form Helper</h3>
+				<button type="button" id="closeChatbot" class="close-chatbot">×</button>
+			</div>
+			<div class="chatbot-body" id="chatbotBody">
+				<div class="bot-message">
+					<strong>Bot:</strong> Hello! I'm here to help you with the feedback form. You can ask me questions like:
+					<ul>
+						<li>What email can I use?</li>
+						<li>What format should the phone number be?</li>
+						<li>How many digits should the zip code have?</li>
+						<li>Which fields are required?</li>
+						<li>Is Street Address 2 mandatory?</li>
+					</ul>
+				</div>
+			</div>
+			<div class="chatbot-footer">
+				<input type="text" id="chatInput" placeholder="Ask me anything about the form..." />
+				<button type="button" id="sendChatBtn">Send</button>
+			</div>
+		</div>
+	 </div>
+	 
+	 <h2>Feedback Form</h2>
+	 <h3>Love something? Hate something? Let us know!</h3>
+	 
+	 <div class="note">
+		 Note: Fields marked with an asterisk (*) are mandatory
+	 </div>
+	 
+	 <form method="post" novalidate id="feedbackForm">
+		<div class="form-group">
+			<label>Title*:</label>
+			<div class="radio-group">
+				<label>
+					<input type="radio" name="title" id="miss" value="Miss" required="required"/>
+					Miss
+				</label>
+				<label>
+					<input type="radio" name="title" id="mr" value="Mr" required="required"/>
+					Mr.
+				</label>
+				<label>
+					<input type="radio" name="title" id="mrs" value="Mrs" required="required"/>
+					Mrs.
+				</label>
+			</div>
+			<span class="error" id="titleError"></span>
+		</div>
+		
+		<div class="form-group">
+			<label for="firstName">First Name*:</label>
+			<input type="text" name="firstName" id="firstName" placeholder="Enter your first name" />	
+			<span class="error" id="firstNameError"></span>
+		</div>
+
+		<div class="form-group">
+			<label for="lastName">Last Name*:</label>
+			<input type="text" name="lastName" id="lastName" placeholder="Enter your last name" />
+			<span class="error" id="lastNameError"></span>
+		</div>
+
+		<div class="form-group">
+			<label for="emailId">Email Address*:</label>
+			<input type="text" name="emailId" id="emailId" placeholder="yourname@northeastern.edu" />
+			<span class="error" id="emailIdError"></span>
+		</div>
+
+		<div class="form-group">
+			<label for="phoneNumber">Phone Number*:</label>
+			<input type="text" name="phoneNumber" id="phoneNumber" placeholder="(123) 456-7890" maxlength="14" />
+			<span class="error" id="phoneNumberError"></span>
+		</div>
+		
+		<div class="form-group">
+			<label for="zipcode">Zip Code*:</label>
+			<input type="text" name="zipcode" id="zipcode" placeholder="Enter 5 or 6 digit zip code" />
+			<span class="error" id="zipcodeError"></span>
+		</div>
+
+		<div class="form-group">
+			<label for="streetAddress2">Street Address 2 (Optional):</label>
+			<input type="text" name="streetAddress2" id="streetAddress2" placeholder="Apartment, suite, unit, building, floor, etc." maxlength="50" />
+			<span class="character-counter" id="streetAddress2Counter">0/50 characters used</span>
+			<span class="error" id="streetAddress2Error"></span>
+		</div>
+		 
+		<div class="form-group">
+			<label for="source">How did you hear about us?*:</label>
+			<select name="source" id="source">
+				<option value="">-- Select an option --</option>
+				<option value="Facebook">Facebook</option>
+				<option value="Google">Google</option>
+				<option value="Yelp">Yelp</option>
+				<option value="Friend">Friend</option>
+				<option value="Other">Other</option>
+			</select>
+			<span class="error" id="sourceError"></span>
+			
+			<div id="dynamicCheckbox"></div>
+		</div>
+
+		<div class="form-group">
+			<label for="comments">Comments*:</label>
+			<textarea name="text" id="comments" placeholder="Share your feedback with us (minimum 10 characters)"></textarea>
+			<span class="error" id="commentsError"></span>
+		</div>
+
+		<div class="button-group">
+			<input type="submit" id="submitBtn" value="Submit Feedback" disabled>
+			<input type="reset" id="resetBtn" value="Clear Form">
+		</div>
+	 </form>
+
+	 <div id="submissionsSection" style="display: none;">
+		<h2 style="margin-top: 50px; margin-bottom: 20px;">Previous Submissions</h2>
+		<div style="overflow-x: auto;">
+			<table id="submissionsTable">
+				<thead>
+					<tr>
+						<th>S.No</th>
+						<th>Title</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Phone Number</th>
+						<th>Zip Code</th>
+						<th>Street Address 2</th>
+						<th>How did you hear</th>
+						<th>Additional Info</th>
+						<th>Comments</th>
+					</tr>
+				</thead>
+				<tbody id="submissionsTableBody">
+				</tbody>
+			</table>
+		</div>
+	 </div>
+
+	 </main>
+ </div>
+
+ <script src="script.js"></script>
+
+ </body>
+</html>
