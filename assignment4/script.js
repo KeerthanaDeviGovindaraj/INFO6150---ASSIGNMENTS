@@ -175,7 +175,7 @@ function setupValidation() {
         }
     });
 }
-
+    
 const phoneNumber = document.getElementById('phoneNumber');
 phoneNumber.addEventListener('input', function(e) {
 
