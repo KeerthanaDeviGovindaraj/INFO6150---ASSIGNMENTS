@@ -17,7 +17,7 @@ const validationRules = {
     title: {
         type: 'radio',
         required: true,
-        errorMsg: 'Please select a title'
+        errorMsg: 'Please select a title' 
     },
     firstName: {
         type: 'text',
