@@ -2,7 +2,7 @@
 
 A modern, fully-validated feedback form with an AI-powered FAQ chatbot assistant built using HTML, CSS, and JavaScript.
 
-##  Features added 
+##  Features added   
 
 ### Form Validation
 - **Real-time validation** on all input fields with visual feedback
