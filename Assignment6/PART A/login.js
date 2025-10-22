@@ -89,9 +89,7 @@ $(document).ready(function() {
             
             $('#formError').hide();
             
-    
             $('#successMessage').text('Login successful! Redirecting...').fadeIn(300);
-            
          
             setTimeout(function() {
                 window.location.href = 'calculator.html';
