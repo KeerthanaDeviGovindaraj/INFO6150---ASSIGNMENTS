@@ -99,7 +99,7 @@ input:disabled {
     border-radius: 10px; 
     border: none; 
     cursor: pointer; 
-    font-weight:600; 
+    font-weight:500; 
     min-width: 110px; 
     transition: transform .08s ease; }
 
