@@ -25,11 +25,6 @@ A single-page stopwatch app that lets users time events, tag them with dates, an
 - JavaScript (ES6+)
 - jQuery 3.6.0
 
-## How to run
-1. Clone or download the folder containing `index.html`, `styles.css`, and `app.js`.
-2. Open `index.html` in any modern browser (Chrome, Edge, Firefox, Safari).
-3. The app stores sessions in your browser's `localStorage`.
-
 ## Notes / Bonus
 - History items are ordered with the most recent saved first.
 - Clicking a session copies `<date> - <name> - <duration>` to clipboard (if supported).
