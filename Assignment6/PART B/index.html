@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Event Stopwatch with Session Logging</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Event Stopwatch</h1>
+      <p class="subtitle">Time events, tag them with dates, and keep a local history.</p>
+    </header>
+
+    <section class="timer-section">
+      <div id="timerDisplay" class="timer" aria-live="polite">00:00:00</div>
+
+      <form id="eventForm" class="event-form" autocomplete="off" novalidate>
+        <div class="form-row">
+          <label for="eventDate">Date</label>
+          <input type="date" id="eventDate" />
+          <div id="dateError" class="error" aria-live="polite"></div>
+        </div>
+
+        <div class="form-row">
+          <label for="eventName">Event Name</label>
+          <input type="text" id="eventName" placeholder="What are you timing?" maxlength="100" />
+          <div id="nameError" class="error" aria-live="polite"></div>
+        </div>
+      </form>
+
+      <div class="controls">
+        <button id="startBtn" class="btn btn-start">Start</button>
+        <button id="pauseResumeBtn" class="btn btn-pause" disabled>Pause</button>
+        <button id="stopSaveBtn" class="btn btn-stop" disabled>Stop &amp; Save</button>
+        <button id="resetBtn" class="btn btn-reset">Reset</button>
+      </div>
+
+      <div id="notification" class="notification hidden"></div>
+    </section>
+
+    <section class="history-section">
+      <div class="history-header">
+        <h2>Session History</h2>
+        <div class="history-controls">
+          <input type="date" id="filterDate" />
+          <button id="clearFilter" class="btn small">Clear</button>
+        </div>
+      </div>
+
+      <div id="stats" class="stats">
+        <div>Total sessions: <span id="totalCount">0</span></div>
+        <div>Total time: <span id="totalTime">00:00:00</span></div>
+      </div>
+
+      <div id="historyList" class="history-list">
+        <div class="empty">No sessions recorded yet</div>
+      </div>
+    </section>
+  </main>
+
+  <div id="modalBackdrop" class="modal hidden" aria-hidden="true">
+  <div class="modal-content">
+    <p id="modalBody">Save Session?</p>
+    <div class="modal-actions">
+      <button id="modalCancel" class="btn btn-secondary">Cancel</button>
+      <button id="modalConfirm" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</div>
+
+
+  <script src="app.js" defer></script>
+</body>
+</html>
