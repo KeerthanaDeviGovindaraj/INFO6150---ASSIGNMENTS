@@ -1,0 +1,45 @@
+// ============================================
+// PLACEHOLDER SELECTORS
+// ============================================
+
+%card-base {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover { 
+    transform: translateY(-6px); 
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
+  }
+}
+
+%card-hover {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+}
+
+%visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  padding: 0;
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%text-gradient {
+  background: linear-gradient(135deg, #1a365d 0%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

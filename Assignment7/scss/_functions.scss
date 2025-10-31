@@ -1,0 +1,15 @@
+@use "sass:color";
+@use "sass:math";
+
+@function px-to-rem($px, $base: 16) {
+  @return math.div($px, $base) * 1rem;
+}
+
+@function contrast-color($color) {
+  $lightness: color.channel($color, "lightness", $space: hsl);
+  @if ($lightness > 60) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}

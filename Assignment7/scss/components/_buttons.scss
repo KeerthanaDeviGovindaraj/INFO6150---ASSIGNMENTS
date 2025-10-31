@@ -1,0 +1,126 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+// ============================================
+// MASTER'S LEVEL BUTTON SYSTEM
+// ============================================
+
+.btn {
+  @include m.button-base;
+  position: relative;
+  overflow: hidden;
+  
+  // Ripple effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: v.$radius-full;
+    background: rgba(v.$color-white, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  &:active::before {
+    width: 300px;
+    height: 300px;
+  }
+  
+  svg {
+    transition: transform v.$transition-base v.$ease-smooth;
+  }
+  
+  &:hover svg {
+    transform: translateX(4px);
+  }
+}
+
+// Primary Button
+.btn-primary {
+  @include m.button-variant(
+    v.$color-primary,
+    v.$color-white,
+    v.$color-primary-light,
+    v.$shadow-primary
+  );
+  
+  &:hover {
+    box-shadow: v.$shadow-primary, 0 4px 8px rgba(v.$color-primary, 0.2);
+  }
+}
+
+// Secondary Button
+.btn-secondary {
+  @include m.button-variant(
+    v.$color-secondary,
+    v.$color-white,
+    v.$color-secondary-light,
+    v.$shadow-secondary
+  );
+}
+
+// Outline Button
+.btn-outline {
+  @include m.button-base;
+  background: transparent;
+  border: 2px solid v.$color-primary;
+  color: v.$color-primary;
+  
+  &:hover {
+    background: v.$color-primary;
+    color: v.$color-white;
+    border-color: v.$color-primary;
+  }
+}
+
+// Glass Button
+.btn-glass {
+  @include m.button-base;
+  @include m.glassmorphism(0.1, v.$blur-lg);
+  border: 1px solid rgba(v.$color-white, 0.2);
+  color: v.$text-primary;
+  backdrop-filter: blur(10px);
+  
+  &:hover {
+    @include m.glassmorphism(0.2, v.$blur-lg);
+    border-color: rgba(v.$color-primary, 0.3);
+  }
+}
+
+// White Button (for dark backgrounds)
+.btn-white {
+  @include m.button-variant(
+    v.$color-white,
+    v.$color-primary,
+    v.$color-gray-50
+  );
+}
+
+// Button Sizes
+.btn-sm {
+  padding: v.$spacing-2 v.$spacing-4;
+  font-size: v.$font-size-sm;
+}
+
+.btn-lg {
+  padding: v.$spacing-4 v.$spacing-8;
+  font-size: v.$font-size-lg;
+  
+  @include m.respond-below('sm') {
+    padding: v.$spacing-3 v.$spacing-6;
+    font-size: v.$font-size-base;
+  }
+}
+
+// Button Animations
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(v.$color-primary, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(v.$color-primary, 0);
+  }
+}

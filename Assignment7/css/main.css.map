@@ -1,0 +1,19 @@
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "../scss/main.scss",
+    "../scss/_variables.scss",
+    "../scss/_mixins.scss",
+    "../scss/_functions.scss",
+    "../scss/layout/_grid.scss",
+    "../scss/layout/_header-footer.scss",
+    "../scss/components/_buttons.scss",
+    "../scss/components/_cards.scss",
+    "../scss/utilities/_helpers.scss",
+    "../scss/themes/_dark.scss"
+  ],
+  "names": [],
+  "mappings": "AAAA,gCAAgC;AAChC,sBAAsB;AACtB,gCAAgC;AAEhC,2BAA2B;AAC3B,MAAM;AACJ,kBAAkB;AAClB,oBAAoB;AACpB,iBAAiB;AACjB,iBAAiB;AACjB,mBAAmB;AACnB,oBAAoB;AACpB,eAAe;;;AAGjB,kBAAkB;AAClB,EAAE,EAAE,QAAQ,EAAE,OAAO;AACnB,sBAAsB;AACtB,SAAS;AACT,UAAU;;;AAGZ,KAAK;AACH,uBAAuB;AACvB,mCAAmC;AACnC,kCAAkC;;;AAGpC,KAAK;AACH,2EAA2E;AAC3E,eAAe;AACf,iBAAiB;AACjB,cAAc;AACd,mBAAmB;AACnB,kBAAkB",
+  "file": "main.css"
+}

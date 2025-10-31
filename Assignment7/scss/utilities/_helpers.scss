@@ -1,0 +1,32 @@
+@use "../variables" as v;
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s;
+  
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.btn-primary {
+  background: v.$brand;
+  color: #fff;
+  border: none;
+}
+
+.btn-outline {
+  border: 2px solid v.$brand;
+  color: v.$brand;
+  background: transparent;
+}
+
+.btn-accent {
+  background: v.$accent;
+  color: #fff;
+  border: none;
+}

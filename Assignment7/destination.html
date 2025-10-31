@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore our curated collection of premium travel destinations worldwide" />
+  <title>Wanderly – Premium Destinations</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M16 2L4 8L16 14L28 8L16 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M4 16L16 22L28 16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M4 24L16 30L28 24" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">Wanderly</span>
+      </a>
+      
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">
+          <span>Home</span>
+          <div class="nav-indicator"></div>
+        </a>
+        <a href="destination.html" class="nav-link active">
+          <span>Destinations</span>
+          <div class="nav-indicator"></div>
+        </a>
+        <a href="index.html#experiences" class="nav-link">
+          <span>Experiences</span>
+          <div class="nav-indicator"></div>
+        </a>
+        <a href="index.html#about" class="nav-link">
+          <span>About</span>
+          <div class="nav-indicator"></div>
+        </a>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="btn-icon" aria-label="Search">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="9" r="7"/>
+            <path d="M14 14l5 5"/>
+          </svg>
+        </button>
+        <a href="#contact" class="btn btn-primary">
+          <span>Contact Us</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12l7-7m0 0H5m7 0v7"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="destinations-hero">
+      <div class="container">
+        <div class="hero-content" data-aos="fade-up">
+          <div class="section-subtitle">
+            <span class="subtitle-line"></span>
+            <span>Explore The World</span>
+            <span class="subtitle-line"></span>
+          </div>
+          <h1 class="hero-title">
+            Premium Travel
+            <span class="title-accent">Destinations</span>
+          </h1>
+          <p class="hero-subtitle">
+            Discover handpicked locations that promise extraordinary experiences, 
+            from hidden gems to world-renowned landmarks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINATIONS GRID -->
+    <section class="destinations-section">
+      <div class="container">
+        <div class="dest-grid" data-aos="fade-up">
+          
+          <!-- Card 1 - Maldives -->
+          <article class="destination-card">
+            <div class="card-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&h=600&fit=crop&q=80" 
+                   alt="Maldives overwater bungalows" 
+                   class="card-image" />
+              <div class="card-overlay"></div>
+              <div class="card-badge">
+                <svg width="16" height="16" fill="currentColor">
+                  <path d="M8 1l2 5h5l-4 3 2 5-5-3-5 3 2-5-4-3h5z"/>
+                </svg>
+                <span>Premium</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="meta-tag">Tropical Paradise</span>
+                <div class="card-rating">
+                  <svg width="16" height="16" fill="currentColor">
+                    <path d="M8 1l2 5h5l-4 3 2 5-5-3-5 3 2-5-4-3h5z"/>
+                  </svg>
+                  <span>4.9</span>
+                  <span class="rating-count">(2.4K)</span>
+                </div>
+              </div>
+              <h3 class="card-title">The Maldives</h3>
+              <p class="card-description">
+                Experience luxury overwater villas, pristine coral reefs, and turquoise lagoons 
+                in the Indian Ocean's most exclusive destination.
+              </p>
+              <div class="card-features">
+                <div class="feature-item">
+                  <svg width="16" height="16" fill="currentColor" opacity="0.6">
+                    <circle cx="8" cy="8" r="6" stroke="currentColor" fill="none"/>
+                    <path d="M8 4v4l3 2"/>
+                  </svg>
+                  <span>7 Days</span>
+                </div>
+                <div class="feature-item">
+                  <svg width="16" height="16" fill="currentColor" opacity="0.6">
+                    <path d="M2 8h12M8 2v12"/>
+                  </svg>
+                  <span>All Inclusive</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price-wrapper">
+                  <span class="price-label">From</span>
+                  <span class="price-value">$2,499</span>
+                  <span class="price-period">/person</span>
+                </div>
+                <a href="#" class="btn btn-outline btn-sm">
+                  <span>View Details</span>
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12l7-7m0 0H5m7 0v7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 - Paris -->
+          <article class="destination-card">
+            <div class="card-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop&q=80" 
+                   alt="Eiffel Tower Paris" 
+                   class="card-image" />
+              <div class="card-overlay"></div>
+              <div class="card-badge badge-cultural">
+                <span>Cultural</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="meta-tag">European Elegance</span>
+                <div class="card-rating">
+                  <svg width="16" height="16" fill="currentColor">
+                    <path d="M8 1l2 5h5l-4 3 2 5-5-3-5 3 2-5-4-3h5z"/>
+                  </svg>
+                  <span>4.8</span>
+                  <span class="rating-count">(3.1K)</span>
+                </div>
+              </div>
+              <h3 class="card-title">Paris</h3>
+              <p class="card-description">
+                The City of Light beckons with world-class museums, haute cuisine, 
+                and architectural marvels that define romance and sophistication.
+              </p>
+              <div class="card-features">
+                <div class="feature-item">
+                  <svg width="16" height="16" fill="currentColor" opacity="0.6">
+                    <circle cx="8" cy="8" r="6" stroke="currentColor" fill="none"/>
+                    <path d="M8 4v4l3 2"/>
+                  </svg>
+                  <span>5 Days</span>
+                </div>
+                <div class="feature-item">
+                  <svg width="16" height="16" fill="currentColor" opacity="0.6">
+                    <path d="M4 4h8v8H4z"/>
+                  </svg>
+                  <span>City Tours</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price-wrapper">
+                  <span class="price-label">From</span>
+                  <span class="price-value">$1,299</span>
+                  <span class="price-period">/person</span>
+                </div>
+                <a href="#" class="btn btn-outline btn-sm">
+                  <span>View Details</span>
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12l7-7m0 0H5m7 0v7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 - Kyoto -->
+          <article class="destination-card">
+            <div class="card-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop&q=80" 
+                   alt="Kyoto temple Japan" 
+                   class="card-image" />
+              <div class="card-overlay"></div>
+              <div class="card-badge badge-nature">
+                <span>Historic</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="meta-tag">Ancient Traditions</span>
+                <div class="card-rating">
+                  <svg width="16" height="16" fill="currentColor">
+                    <path d="M8 1l2 5h5l-4 3 2 5-5-3-5 3 2-5-4-3h5z"/>
+                  </svg>
+                  <span>4.9</span>
+                  <span class="rating-count">(1.8K)</span>
+                </div>
+              </div>
+              <h3 class="card-title">Kyoto</h3>
+              <p class="card-description">
+                Japan's cultural heart offers serene temples, traditional tea ceremonies, 
+                and bamboo forests that transport you to ancient times.
+              </p>
+              <div class="card-features">
+                <div class="feature-item">
+                  <svg width="16" height="16" fill="currentColor" opacity="0.6">
+                    <circle cx="8" cy="8" r="6" stroke="currentColor" fill="none"/>
+                    <path d="M8 4v4l3 2"/>
+                  </svg>
+                  <span>6 Days</span>
+                </div>
+                <div class="feature-item">
+                  <svg width="16" height="16" fill="currentColor" opacity="0.6">
+                    <path d="M4 4h8v8H4z"/>
+                  </svg>
+                  <span>Cultural</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price-wrapper">
+                  <span class="price-label">From</span>
+                  <span class="price-value">$1,799</span>
+                  <span class="price-period">/person</span>
+                </div>
+                <a href="#" class="btn btn-outline btn-sm">
+                  <span>View Details</span>
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12l7-7m0 0H5m7 0v7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 - New York -->
+          <article class="destination-card">
+            <div class="card-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&h=600&fit=crop&q=80" 
+                   alt="New York skyline" 
+                   class="card-image" />
+              <div class="card-overlay"></div>
+              <div class="card-badge">
+                <span>Urban</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="meta-tag">Metropolitan</span>
+                <div class="card-rating">
+                  <svg width="16" height="16" fill="currentColor">
+                    <path d="M8 1l2 5h5l-4 3 2 5-5-3-5 3 2-5-4-3h5z"/>
+                  </svg>
+                  <span>4.7</span>
+                  <span class="rating-count">(2.9K)</span>
+                </div>
+              </div>
+              <h3 class="card-title">New York City</h3>
+              <p class="card-description">
+                The city that never sleeps offers endless energy, world-class arts, 
+                and iconic landmarks that define the American experience.
+              </p>
+              <div class="card-features">
+                <div class="feature-item">
+                  <svg width="16" height="16" fill="currentColor" opacity="0.6">
+                    <circle cx="8" cy="8" r="6" stroke="currentColor" fill="none"/>
+                    <path d="M8 4v4l3 2"/>
+                  </svg>
+                  <span>4 Days</span>
+                </div>
+                <div class="feature-item">
+                  <svg width="16" height="16" fill="currentColor" opacity="0.6">
+                    <path d="M4 4h8v8H4z"/>
+                  </svg>
+                  <span>City Break</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price-wrapper">
+                  <span class="price-label">From</span>
+                  <span class="price-value">$999</span>
+                  <span class="price-period">/person</span>
+                </div>
+                <a href="#" class="btn btn-outline btn-sm">
+                  <span>View Details</span>
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12l7-7m0 0H5m7 0v7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 - Santorini -->
+          <article class="destination-card">
+            <div class="card-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&h=600&fit=crop&q=80" 
+                   alt="Santorini Greece" 
+                   class="card-image" />
+              <div class="card-overlay"></div>
+              <div class="card-badge">
+                <span>Romantic</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="meta-tag">Mediterranean</span>
+                <div class="card-rating">
+                  <svg width="16" height="16" fill="currentColor">
+                    <path d="M8 1l2 5h5l-4 3 2 5-5-3-5 3 2-5-4-3h5z"/>
+                  </svg>
+                  <span>4.9</span>
+                  <span class="rating-count">(2.2K)</span>
+                </div>
+              </div>
+              <h3 class="card-title">Santorini</h3>
+              <p class="card-description">
+                Blue-domed churches, whitewashed buildings, and stunning Aegean sunsets 
+                create the perfect romantic Greek island escape.
+              </p>
+              <div class="card-features">
+                <div class="feature-item">
+                  <svg width="16" height="16" fill="currentColor" opacity="0.6">
+                    <circle cx="8" cy="8" r="6" stroke="currentColor" fill="none"/>
+                    <path d="M8 4v4l3 2"/>
+                  </svg>
+                  <span>5 Days</span>
+                </div>
+                <div class="feature-item">
+                  <svg width="16" height="16" fill="currentColor" opacity="0.6">
+                    <path d="M4 4h8v8H4z"/>
+                  </svg>
+                  <span>Island Retreat</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price-wrapper">
+                  <span class="price-label">From</span>
+                  <span class="price-value">$1,599</span>
+                  <span class="price-period">/person</span>
+                </div>
+                <a href="#" class="btn btn-outline btn-sm">
+                  <span>View Details</span>
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12l7-7m0 0H5m7 0v7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 - Banff -->
+          <article class="destination-card">
+            <div class="card-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=800&h=600&fit=crop&q=80" 
+                   alt="Banff Canada mountains" 
+                   class="card-image" />
+              <div class="card-overlay"></div>
+              <div class="card-badge badge-nature">
+                <span>Adventure</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="meta-tag">Mountain Escape</span>
+                <div class="card-rating">
+                  <svg width="16" height="16" fill="currentColor">
+                    <path d="M8 1l2 5h5l-4 3 2 5-5-3-5 3 2-5-4-3h5z"/>
+                  </svg>
+                  <span>4.8</span>
+                  <span class="rating-count">(1.5K)</span>
+                </div>
+              </div>
+              <h3 class="card-title">Banff National Park</h3>
+              <p class="card-description">
+                Majestic Rocky Mountains, turquoise glacial lakes, and pristine wilderness 
+                create Canada's most spectacular natural playground.
+              </p>
+              <div class="card-features">
+                <div class="feature-item">
+                  <svg width="16" height="16" fill="currentColor" opacity="0.6">
+                    <circle cx="8" cy="8" r="6" stroke="currentColor" fill="none"/>
+                    <path d="M8 4v4l3 2"/>
+                  </svg>
+                  <span>6 Days</span>
+                </div>
+                <div class="feature-item">
+                  <svg width="16" height="16" fill="currentColor" opacity="0.6">
+                    <path d="M4 4h8v8H4z"/>
+                  </svg>
+                  <span>Nature</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price-wrapper">
+                  <span class="price-label">From</span>
+                  <span class="price-value">$1,399</span>
+                  <span class="price-period">/person</span>
+                </div>
+                <a href="#" class="btn btn-outline btn-sm">
+                  <span>View Details</span>
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12l7-7m0 0H5m7 0v7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 2L4 8L16 14L28 8L16 2Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M4 16L16 22L28 16" stroke="currentColor" stroke-width="2"/>
+              <path d="M4 24L16 30L28 24" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <span>Wanderly</span>
+          </a>
+          <p class="footer-description">
+            Discover the world's most extraordinary destinations and create 
+            memories that transcend time and place.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="20" height="20" fill="currentColor">
+                <rect width="20" height="20" rx="5"/>
+                <circle cx="10" cy="10" r="4" fill="white"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <svg width="20" height="20" fill="currentColor">
+                <rect width="20" height="20" rx="5"/>
+                <path d="M7 6l8 4-8 4z" fill="white"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg width="20" height="20" fill="currentColor">
+                <path d="M18 4a4 4 0 01-1 1 7 7 0 01-12 6 10 10 0 01-3-1 7 7 0 006-2z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4 class="footer-heading">Destinations</h4>
+          <ul>
+            <li><a href="#">Asia</a></li>
+            <li><a href="#">Europe</a></li>
+            <li><a href="#">Americas</a></li>
+            <li><a href="#">Africa</a></li>
+            <li><a href="#">Oceania</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4 class="footer-heading">Company</h4>
+          <ul>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Partners</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Stay Inspired</h4>
+          <p class="newsletter-text">
+            Subscribe for exclusive travel insights, destination guides, and special offers.
+          </p>
+          <form class="newsletter-form">
+            <input 
+              type="email" 
+              placeholder="Your email address" 
+              required 
+              class="newsletter-input"
+            />
+            <button type="submit" class="newsletter-button">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12l7-7m0 0H5m7 0v7"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Wanderly. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <span>·</span>
+          <a href="#">Terms of Service</a>
+          <span>·</span>
+          <a href="#">Cookie Policy</a>
+        </div>
+        <p class="footer-eco">🌿 Committed to sustainable travel</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+      
+      document.querySelectorAll('[data-aos]').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.8s ease';
+        observer.observe(el);
+      });
+    });
+  </script>
+
+</body>
+</html>

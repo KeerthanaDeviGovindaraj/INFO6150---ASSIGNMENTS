@@ -1,0 +1,227 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+@use "../placeholders" as p;
+
+// ============================================
+// MASTER'S LEVEL CARD SYSTEM
+// ============================================
+
+.destination-card {
+  @extend %card-base;
+  @include m.card-base(v.$radius-2xl, v.$shadow-md);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: v.$bg-primary;
+  
+  @include m.card-hover(-8px, v.$shadow-2xl);
+  
+  &:hover {
+    .card-image {
+      transform: scale(1.05);
+    }
+    
+    .card-overlay {
+      opacity: v.$opacity-60;
+    }
+  }
+}
+
+// Featured Card (larger)
+.card-featured {
+  @include m.respond-above('lg') {
+    grid-column: span 2;
+    grid-row: span 2;
+    
+    .card-image-wrapper {
+      height: 400px;
+    }
+  }
+}
+
+// Card Image
+.card-image-wrapper {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background: v.$color-gray-100;
+}
+
+.card-image {
+  @include m.image-cover;
+  transition: transform v.$transition-slow v.$ease-smooth;
+}
+
+.card-overlay {
+  @include m.absolute-full;
+  background: linear-gradient(
+    to top,
+    rgba(v.$color-black, 0.4) 0%,
+    transparent 50%
+  );
+  opacity: v.$opacity-30;
+  transition: opacity v.$transition-base;
+}
+
+// Card Badge
+.card-badge {
+  position: absolute;
+  top: v.$spacing-4;
+  right: v.$spacing-4;
+  @include m.glassmorphism(0.95, v.$blur-md);
+  padding: v.$spacing-2 v.$spacing-4;
+  border-radius: v.$radius-full;
+  font-size: v.$font-size-xs;
+  font-weight: v.$font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: v.$letter-spacing-wide;
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-1-5;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(v.$color-white, 0.2);
+  color: v.$color-white;
+  
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  &.badge-cultural {
+    background: rgba(v.$color-secondary, 0.9);
+  }
+  
+  &.badge-nature {
+    background: rgba(v.$color-accent, 0.9);
+  }
+}
+
+// Card Content
+.card-content {
+  padding: v.$spacing-6;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-meta {
+  @include m.flex-between(row, center);
+  margin-bottom: v.$spacing-4;
+}
+
+.meta-tag {
+  font-size: v.$font-size-xs;
+  font-weight: v.$font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: v.$letter-spacing-wider;
+  color: v.$color-secondary;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-1;
+  font-size: v.$font-size-sm;
+  font-weight: v.$font-weight-semibold;
+  color: v.$text-primary;
+  
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: v.$color-secondary;
+  }
+  
+  .rating-count {
+    color: v.$text-muted;
+    font-weight: v.$font-weight-normal;
+  }
+}
+
+.card-title {
+  font-size: v.$font-size-2xl;
+  font-weight: v.$font-weight-bold;
+  color: v.$text-primary;
+  margin-bottom: v.$spacing-3;
+}
+
+.card-description {
+  font-size: v.$font-size-base;
+  line-height: v.$line-height-relaxed;
+  color: v.$text-secondary;
+  margin-bottom: v.$spacing-5;
+  flex: 1;
+}
+
+.card-features {
+  display: flex;
+  gap: v.$spacing-4;
+  margin-bottom: v.$spacing-5;
+  padding: v.$spacing-4 0;
+  border-top: 1px solid v.$color-gray-200;
+  border-bottom: 1px solid v.$color-gray-200;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-2;
+  font-size: v.$font-size-sm;
+  color: v.$text-secondary;
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.card-footer {
+  @include m.flex-between(row, center);
+}
+
+.price-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: v.$spacing-1;
+}
+
+.price-label {
+  font-size: v.$font-size-xs;
+  color: v.$text-muted;
+  text-transform: uppercase;
+  letter-spacing: v.$letter-spacing-wide;
+}
+
+.price-value {
+  font-size: v.$font-size-3xl;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-primary;
+}
+
+.price-period {
+  font-size: v.$font-size-sm;
+  color: v.$text-muted;
+}
+
+// Simple Card (for basic usage)
+.card {
+  @extend %card-base;
+  @include m.card-base;
+  
+  img {
+    width: 100%;
+    border-radius: v.$radius-lg;
+    margin-bottom: v.$spacing-4;
+  }
+  
+  h3 {
+    font-size: v.$font-size-xl;
+    margin-bottom: v.$spacing-2;
+  }
+  
+  p {
+    font-size: v.$font-size-base;
+    color: v.$text-secondary;
+    margin: 0;
+  }
+}

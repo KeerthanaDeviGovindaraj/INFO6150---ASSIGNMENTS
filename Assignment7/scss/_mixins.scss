@@ -1,0 +1,392 @@
+@use "sass:map";
+@use "variables" as v;
+
+// ============================================
+// MASTER'S LEVEL MIXIN LIBRARY
+// ============================================
+
+// -------------------- RESPONSIVE MIXINS --------------------
+@mixin respond-above($breakpoint) {
+  $breakpoint-value: map.get(v.$breakpoints, $breakpoint);
+  @if $breakpoint-value {
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-below($breakpoint) {
+  $breakpoint-value: map.get(v.$breakpoints, $breakpoint);
+  @if $breakpoint-value {
+    $max-width: $breakpoint-value - 1px;
+    @media (max-width: $max-width) {
+      @content;
+    }
+  }
+}
+@mixin respond-between($min, $max) {
+  $min-value: map.get(v.$breakpoints, $min);
+  $max-value: map.get(v.$breakpoints, $max);
+  @if $min-value and $max-value {
+    $max-width: $max-value - 1px;
+    @media (min-width: $min-value) and (max-width: $max-width) {
+      @content;
+    }
+  }
+}
+
+// Legacy support
+@mixin mq($breakpoint) {
+  @include respond-below($breakpoint) {
+    @content;
+  }
+}
+
+// -------------------- FLEXBOX MIXINS --------------------
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between($direction: row, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-between;
+  align-items: $align;
+}
+
+@mixin flex-around($direction: row, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-around;
+  align-items: $align;
+}
+
+@mixin flex-evenly($direction: row, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-evenly;
+  align-items: $align;
+}
+
+// -------------------- GRID MIXINS --------------------
+@mixin grid-auto($min-width: 280px, $gap: v.$spacing-6) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+@mixin grid-columns($columns: 3, $gap: v.$spacing-6) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin grid-responsive($mobile: 1, $tablet: 2, $desktop: 3, $gap: v.$spacing-6) {
+  display: grid;
+  grid-template-columns: repeat($mobile, 1fr);
+  gap: $gap;
+  
+  @include respond-above('md') {
+    grid-template-columns: repeat($tablet, 1fr);
+  }
+  
+  @include respond-above('lg') {
+    grid-template-columns: repeat($desktop, 1fr);
+  }
+}
+
+// -------------------- POSITIONING MIXINS --------------------
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin fixed-full {
+  position: fixed;
+  inset: 0;
+}
+
+// -------------------- VISUAL EFFECTS --------------------
+@mixin glassmorphism($bg-opacity: 0.1, $blur: v.$blur-lg) {
+  background: rgba(255, 255, 255, $bg-opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+}
+
+@mixin glassmorphism-dark($bg-opacity: 0.2, $blur: v.$blur-lg) {
+  background: rgba(0, 0, 0, $bg-opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+}
+
+@mixin gradient-overlay($direction: to bottom, $start: rgba(0, 0, 0, 0.6), $end: transparent) {
+  position: relative;
+  
+  &::before {
+    content: '';
+    @include absolute-full;
+    background: linear-gradient($direction, $start, $end);
+    pointer-events: none;
+    z-index: v.$z-10;
+  }
+}
+
+@mixin text-gradient($gradient) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin hover-lift($distance: -8px, $shadow: v.$shadow-lg) {
+  transition: transform v.$transition-medium v.$ease-smooth,
+              box-shadow v.$transition-medium v.$ease-smooth;
+  
+  &:hover {
+    transform: translateY($distance);
+    box-shadow: $shadow;
+  }
+}
+
+@mixin hover-scale($scale: 1.05, $duration: v.$transition-medium) {
+  transition: transform $duration v.$ease-smooth;
+  
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+@mixin hover-glow($color: v.$color-primary, $size: 20px) {
+  transition: box-shadow v.$transition-medium v.$ease-smooth;
+  
+  &:hover {
+    box-shadow: 0 0 $size rgba($color, 0.5);
+  }
+}
+
+// -------------------- ANIMATION MIXINS --------------------
+@mixin fade-in($duration: v.$transition-medium, $delay: 0s) {
+  animation: fadeIn $duration v.$ease-smooth $delay forwards;
+}
+
+@mixin slide-in-up($distance: 30px, $duration: v.$transition-medium) {
+  animation: slideInUp $duration v.$ease-smooth forwards;
+}
+
+@mixin bounce-in($duration: v.$transition-slow) {
+  animation: bounceIn $duration v.$ease-bounce forwards;
+}
+
+// -------------------- TYPOGRAPHY MIXINS --------------------
+@mixin heading($size: 'xl', $weight: v.$font-weight-bold) {
+  font-family: v.$font-display;
+  font-size: map.get(v.$font-sizes, $size);
+  font-weight: $weight;
+  line-height: v.$line-height-tight;
+  color: v.$text-primary;
+}
+
+@mixin body-text($size: 'base', $weight: v.$font-weight-normal) {
+  font-family: v.$font-primary;
+  font-size: map.get(v.$font-sizes, $size);
+  font-weight: $weight;
+  line-height: v.$line-height-normal;
+  color: v.$text-secondary;
+}
+
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// -------------------- BUTTON MIXINS --------------------
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: v.$spacing-2;
+  padding: v.$spacing-3 v.$spacing-6;
+  border-radius: v.$radius-lg;
+  font-family: v.$font-primary;
+  font-weight: v.$font-weight-semibold;
+  font-size: v.$font-size-base;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all v.$transition-base v.$ease-smooth;
+  white-space: nowrap;
+  
+  &:disabled {
+    opacity: v.$opacity-50;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+@mixin button-variant($bg, $color, $hover-bg: null, $shadow: null) {
+  @include button-base;
+  background: $bg;
+  color: $color;
+  
+  @if $shadow {
+    box-shadow: $shadow;
+  }
+  
+  @if $hover-bg {
+    &:hover:not(:disabled) {
+      background: $hover-bg;
+      transform: translateY(-2px);
+    }
+  } @else {
+    &:hover:not(:disabled) {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+}
+
+// -------------------- CARD MIXINS --------------------
+@mixin card-base($radius: v.$radius-2xl, $shadow: v.$shadow-md) {
+  background: v.$bg-primary;
+  border-radius: $radius;
+  padding: v.$spacing-6;
+  box-shadow: $shadow;
+  transition: all v.$transition-medium v.$ease-smooth;
+}
+
+@mixin card-hover($lift: -4px, $shadow: v.$shadow-xl) {
+  &:hover {
+    transform: translateY($lift);
+    box-shadow: $shadow;
+  }
+}
+
+@mixin card-glass {
+  @include glassmorphism;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: v.$shadow-lg;
+}
+
+// -------------------- IMAGE MIXINS --------------------
+@mixin aspect-ratio($width, $height) {
+  aspect-ratio: $width / $height;
+  
+  @supports not (aspect-ratio: 1) {
+    &::before {
+      content: '';
+      display: block;
+      padding-bottom: ($height / $width) * 100%;
+    }
+  }
+}
+
+@mixin image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin image-overlay($opacity: v.$opacity-40) {
+  position: relative;
+  
+  &::after {
+    content: '';
+    @include absolute-full;
+    background: rgba(v.$color-black, $opacity);
+    transition: opacity v.$transition-base;
+    pointer-events: none;
+  }
+  
+  &:hover::after {
+    opacity: v.$opacity-60;
+  }
+}
+
+// -------------------- UTILITY MIXINS --------------------
+@mixin container($max-width: v.$container-xl, $padding: v.$spacing-6) {
+  width: 100%;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $padding;
+  padding-right: $padding;
+  
+  @include respond-below('md') {
+    padding-left: v.$spacing-4;
+    padding-right: v.$spacing-4;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin focus-ring($color: v.$color-primary, $width: 3px) {
+  outline: none;
+  
+  &:focus-visible {
+    outline: $width solid $color;
+    outline-offset: 2px;
+    border-radius: v.$radius-base;
+  }
+}
+
+@mixin scrollbar-custom($width: 8px, $track-bg: v.$color-gray-100, $thumb-bg: v.$color-gray-400) {
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $track-bg;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-bg;
+    border-radius: v.$radius-full;
+    
+    &:hover {
+      background: darken($thumb-bg, 10%);
+    }
+  }
+}
+
+// -------------------- LEGACY SUPPORT --------------------
+@mixin card-frame {
+  @include card-base;
+  @content;
+}

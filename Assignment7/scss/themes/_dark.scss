@@ -1,0 +1,12 @@
+@use "../variables" as v;
+
+:root.dark {
+  --bg: #121212;
+  --text: #f1f1f1;
+  --brand: #3da5b8;
+}
+
+body.dark {
+  background: var(--bg);
+  color: var(--text);
+}

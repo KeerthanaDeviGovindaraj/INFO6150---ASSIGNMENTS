@@ -1,0 +1,38 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+.grid-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: v.$spacing-6;
+  align-items: center;
+  padding: v.$spacing-8 0;
+
+  img { 
+    width: 100%; 
+    border-radius: 12px;
+  }
+  
+  @include m.respond-below('md') { 
+    grid-template-columns: 1fr;
+    gap: v.$spacing-6;
+  }
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: v.$spacing-6;
+  margin: v.$spacing-8 0;
+  
+  @include m.respond-below('md') { 
+    grid-template-columns: 1fr;
+  }
+}
+
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: v.$spacing-6;
+  margin: v.$spacing-8 0;
+}
