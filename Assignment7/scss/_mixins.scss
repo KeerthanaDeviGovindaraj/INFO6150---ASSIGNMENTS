@@ -1,11 +1,6 @@
 @use "sass:map";
 @use "variables" as v;
 
-// ============================================
-// MASTER'S LEVEL MIXIN LIBRARY
-// ============================================
-
-// -------------------- RESPONSIVE MIXINS --------------------
 @mixin respond-above($breakpoint) {
   $breakpoint-value: map.get(v.$breakpoints, $breakpoint);
   @if $breakpoint-value {
@@ -35,14 +30,12 @@
   }
 }
 
-// Legacy support
 @mixin mq($breakpoint) {
   @include respond-below($breakpoint) {
     @content;
   }
 }
 
-// -------------------- FLEXBOX MIXINS --------------------
 @mixin flex-center($direction: row) {
   display: flex;
   flex-direction: $direction;
@@ -71,7 +64,6 @@
   align-items: $align;
 }
 
-// -------------------- GRID MIXINS --------------------
 @mixin grid-auto($min-width: 280px, $gap: v.$spacing-6) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
@@ -98,7 +90,6 @@
   }
 }
 
-// -------------------- POSITIONING MIXINS --------------------
 @mixin absolute-center {
   position: absolute;
   top: 50%;
@@ -119,7 +110,6 @@
   inset: 0;
 }
 
-// -------------------- VISUAL EFFECTS --------------------
 @mixin glassmorphism($bg-opacity: 0.1, $blur: v.$blur-lg) {
   background: rgba(255, 255, 255, $bg-opacity);
   backdrop-filter: blur($blur);
@@ -178,7 +168,6 @@
   }
 }
 
-// -------------------- ANIMATION MIXINS --------------------
 @mixin fade-in($duration: v.$transition-medium, $delay: 0s) {
   animation: fadeIn $duration v.$ease-smooth $delay forwards;
 }
@@ -191,7 +180,6 @@
   animation: bounceIn $duration v.$ease-bounce forwards;
 }
 
-// -------------------- TYPOGRAPHY MIXINS --------------------
 @mixin heading($size: 'xl', $weight: v.$font-weight-bold) {
   font-family: v.$font-display;
   font-size: map.get(v.$font-sizes, $size);
@@ -221,7 +209,6 @@
   }
 }
 
-// -------------------- BUTTON MIXINS --------------------
 @mixin button-base {
   display: inline-flex;
   align-items: center;
@@ -271,7 +258,6 @@
   }
 }
 
-// -------------------- CARD MIXINS --------------------
 @mixin card-base($radius: v.$radius-2xl, $shadow: v.$shadow-md) {
   background: v.$bg-primary;
   border-radius: $radius;
@@ -293,7 +279,7 @@
   box-shadow: v.$shadow-lg;
 }
 
-// -------------------- IMAGE MIXINS --------------------
+
 @mixin aspect-ratio($width, $height) {
   aspect-ratio: $width / $height;
   
@@ -329,7 +315,6 @@
   }
 }
 
-// -------------------- UTILITY MIXINS --------------------
 @mixin container($max-width: v.$container-xl, $padding: v.$spacing-6) {
   width: 100%;
   max-width: $max-width;
@@ -385,7 +370,6 @@
   }
 }
 
-// -------------------- LEGACY SUPPORT --------------------
 @mixin card-frame {
   @include card-base;
   @content;
