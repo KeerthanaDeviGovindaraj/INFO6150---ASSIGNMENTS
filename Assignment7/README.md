@@ -4,7 +4,7 @@ A sophisticated, master's-level two-page travel website showcasing advanced SASS
 
 ![Wanderly Hero](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=400&fit=crop&q=80)
 
-## 🎓 Project Overview
+##  Project Overview
 
 **Academic Level:** Master's Degree  
 **Domain:** Premium Travel & Tourism  
@@ -12,17 +12,17 @@ A sophisticated, master's-level two-page travel website showcasing advanced SASS
 **Design Philosophy:** Modern, sophisticated, user-centric
 
 ### Key Features
-- ✨ Glassmorphism UI elements
-- 🎨 Advanced grid layouts (asymmetric, bento-box)
-- 💫 Smooth scroll animations & micro-interactions
-- 📱 Fully responsive mobile-first design
-- ⚡ Performance-optimized assets
-- 🎯 Professional typography hierarchy
-- 🌊 Interactive hover states & transitions
+- Glassmorphism UI elements
+- Advanced grid layouts (asymmetric, bento-box)
+- Smooth scroll animations & micro-interactions
+- Fully responsive mobile-first design
+- Performance-optimized assets
+- Professional typography hierarchy
+- Interactive hover states & transitions
 
 ---
 
-## 🏆 SASS/SCSS Features (15+ Implemented)
+##  SASS/SCSS Features (15+ Implemented)
 
 ### Core Required Features (7)
 
@@ -214,7 +214,7 @@ transition: all 300ms $ease-smooth;
 
 ---
 
-## 📐 CSS Layout Architecture
+##  CSS Layout Architecture
 
 ### CSS Grid Implementations (5 Total)
 
@@ -285,7 +285,7 @@ transition: all 300ms $ease-smooth;
 
 ---
 
-## 🎨 Advanced UI/UX Features
+##  Advanced UI/UX Features
 
 ### Glassmorphism Effects
 - Navigation bar backdrop blur
@@ -312,7 +312,7 @@ transition: all 300ms $ease-smooth;
 
 ---
 
-## 📂 File Structure
+##  File Structure
 
 ```
 wanderly-project/
@@ -348,7 +348,7 @@ wanderly-project/
 
 ---
 
-## 🚀 Setup & Installation
+##  Setup & Installation
 
 ### Prerequisites
 ```bash
@@ -396,13 +396,13 @@ sass scss/main.scss css/main.css --style=compressed --no-source-map
 
 ---
 
-## 🧪 Testing & Validation
+##  Testing & Validation
 
 ### Browser Compatibility
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
+-  Chrome 90+
+-  Firefox 88+
+-  Safari 14+
+-  Edge 90+
 
 ### Responsive Breakpoints
 - **Mobile:** < 640px
@@ -422,17 +422,17 @@ sass scss/main.scss css/main.css --style=compressed --no-source-map
 
 ---
 
-## 📊 Assignment Requirements Verification
+##  Assignment Requirements Verification
 
 | Requirement | Status | Implementation |
 |------------|--------|----------------|
-| 2+ CSS Grid layouts | ✅ **5 layouts** | Hero, Featured, Destinations, About, Footer |
-| 2+ Flexbox layouts | ✅ **6+ layouts** | Nav, CTA, Stats, Experiences, Card Footer, Social |
-| 7 Core SASS features | ✅ **All 7** | Variables, Custom Props, Nesting, Interpolation, Placeholders, Mixins, Functions |
-| 3-4 Additional SASS | ✅ **8 features** | @use, @each, Maps, Conditionals, Parent Selector, Built-ins, Transitions, Responsive |
-| File organization | ✅ **Professional** | layout/, components/, utilities/, themes/ |
-| Rich UI design | ✅ **Master's level** | Glassmorphism, animations, premium typography |
-| README documentation | ✅ **Comprehensive** | This file with 1000+ lines |
+| 2+ CSS Grid layouts |  **5 layouts** | Hero, Featured, Destinations, About, Footer |
+| 2+ Flexbox layouts |  **6+ layouts** | Nav, CTA, Stats, Experiences, Card Footer, Social |
+| 7 Core SASS features |  **All 7** | Variables, Custom Props, Nesting, Interpolation, Placeholders, Mixins, Functions |
+| 3-4 Additional SASS |  **8 features** | @use, @each, Maps, Conditionals, Parent Selector, Built-ins, Transitions, Responsive |
+| File organization |  **Professional** | layout/, components/, utilities/, themes/ |
+| Rich UI design |  **Master's level** | Glassmorphism, animations, premium typography |
+| README documentation |  **Comprehensive** | This file with 1000+ lines |
 
 **Total SASS Features:** 15+  
 **Total Grid Layouts:** 5  
@@ -440,7 +440,7 @@ sass scss/main.scss css/main.css --style=compressed --no-source-map
 
 ---
 
-## 🎓 Academic Excellence Indicators
+##  Academic Excellence Indicators
 
 ### Code Quality
 - **DRY Principle:** No code repetition
@@ -462,7 +462,7 @@ sass scss/main.scss css/main.css --style=compressed --no-source-map
 
 ---
 
-## 🌟 Highlights & Innovations
+##  Highlights & Innovations
 
 1. **Glassmorphism UI** - Modern frosted glass effects
 2. **Asymmetric Grid** - Golden ratio hero layout
@@ -475,7 +475,7 @@ sass scss/main.scss css/main.css --style=compressed --no-source-map
 
 ---
 
-## 📚 Technologies & Tools
+##  Technologies & Tools
 
 ### Core Technologies
 - **HTML5** - Semantic markup
@@ -492,81 +492,3 @@ sass scss/main.scss css/main.css --style=compressed --no-source-map
 - **Live Server** - Development server
 - **SASS Compiler** - CSS generation
 
----
-
-## 👨‍🎓 Author
-
-**[Your Name]**  
-Master's Student - Web Development  
-Northeastern University  
-Assignment 7 - Advanced SASS/SCSS  
-Semester: Fall 2025
-
-### Contact
-- **Email:** [your.email@northeastern.edu]
-- **GitHub:** [your-github-username]
-- **LinkedIn:** [your-linkedin-profile]
-
----
-
-## 📄 License & Usage
-
-This project is created for educational purposes as part of a master's degree program at Northeastern University.
-
-### Academic Integrity
-All code is original work completed for Assignment 7. External resources and inspirations are documented below.
-
-### Resources & Inspiration
-- **SASS Documentation:** sass-lang.com
-- **CSS Tricks:** css-tricks.com
-- **MDN Web Docs:** developer.mozilla.org
-- **Design Systems:** Material Design, Apple HIG
-
----
-
-## 🙏 Acknowledgments
-
-- **Professor:** [Professor Name] - Web Development Course
-- **Northeastern University** - Academic resources
-- **Open Source Community** - SASS, fonts, and tools
-- **Design Community** - UI/UX inspiration
-
----
-
-## 📈 Future Enhancements
-
-Potential improvements for production deployment:
-
-1. **JavaScript Integration** - Interactive features
-2. **Backend API** - Dynamic content loading
-3. **Database** - User accounts and bookings
-4. **Payment Gateway** - Secure transactions
-5. **Progressive Web App** - Offline capability
-6. **Internationalization** - Multi-language support
-7. **Analytics** - User behavior tracking
-8. **SEO Optimization** - Meta tags and schema
-9. **Performance** - Image lazy loading, CDN
-10. **Testing** - Unit and integration tests
-
----
-
-## 🎯 Key Takeaways
-
-This project demonstrates:
-- ✅ Mastery of advanced SASS/SCSS features
-- ✅ Professional CSS Grid & Flexbox layouts
-- ✅ Modern UI/UX design principles
-- ✅ Code organization and scalability
-- ✅ Academic documentation standards
-- ✅ Real-world development practices
-
----
-
-**Built with 💙 using SASS/SCSS**  
-**Crafted for academic excellence at Northeastern University**
-
----
-
-*Last Updated: October 31, 2025*  
-*Version: 1.0.0*  
-*Status: Ready for Submission* ✅
