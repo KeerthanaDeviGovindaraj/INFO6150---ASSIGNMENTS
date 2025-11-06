@@ -1,8 +1,3 @@
-/* ============================================ */
-/* WANDERLY - MASTER'S LEVEL COMPILED CSS */
-/* ============================================ */
-
-/* CSS Custom Properties */
 :root {
   --color-primary: #1a365d;
   --color-secondary: #d97706;
@@ -13,7 +8,6 @@
   --radius-lg: 0.5rem;
 }
 
-/* Reset & Base */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -35,7 +29,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 700;
@@ -89,9 +82,6 @@ ul, ol {
   }
 }
 
-/* ============================================ */
-/* NAVIGATION - Glassmorphism */
-/* ============================================ */
 .site-header {
   position: sticky;
   top: 0;
@@ -201,9 +191,6 @@ ul, ol {
   color: #1a365d;
 }
 
-/* ============================================ */
-/* HERO SECTION */
-/* ============================================ */
 .hero-section {
   position: relative;
   padding: 8rem 0 6rem;
@@ -371,7 +358,6 @@ ul, ol {
   }
 }
 
-/* Hero Visual */
 .hero-visual {
   position: relative;
   height: 600px;
@@ -467,7 +453,6 @@ ul, ol {
   50% { transform: translateY(-20px); }
 }
 
-/* Scroll Indicator */
 .scroll-indicator {
   display: flex;
   flex-direction: column;
@@ -502,9 +487,6 @@ ul, ol {
   50% { opacity: 1; }
 }
 
-/* ============================================ */
-/* FEATURED SECTION */
-/* ============================================ */
 .featured-section {
   padding: 8rem 0;
   background: #f9fafb;
@@ -588,9 +570,6 @@ ul, ol {
   margin-top: 3rem;
 }
 
-/* ============================================ */
-/* EXPERIENCES SECTION */
-/* ============================================ */
 .experiences-section {
   padding: 8rem 0;
 }
@@ -654,9 +633,6 @@ ul, ol {
   color: #4b5563;
 }
 
-/* ============================================ */
-/* ABOUT SECTION */
-/* ============================================ */
 .about-section {
   position: relative;
   padding: 8rem 0;
@@ -816,9 +792,6 @@ ul, ol {
   display: block;
 }
 
-/* ============================================ */
-/* CTA SECTION */
-/* ============================================ */
 .cta-section {
   position: relative;
   padding: 8rem 0;
@@ -890,9 +863,6 @@ ul, ol {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* ============================================ */
-/* BUTTONS */
-/* ============================================ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1019,9 +989,6 @@ ul, ol {
   }
 }
 
-/* ============================================ */
-/* CARDS */
-/* ============================================ */
 .card {
   padding: 1.25rem;
   border-radius: 12px;
@@ -1249,9 +1216,6 @@ ul, ol {
   color: #6b7280;
 }
 
-/* ============================================ */
-/* DESTINATIONS PAGE */
-/* ============================================ */
 .destinations-hero {
   padding: 6rem 0 4rem;
   background: linear-gradient(135deg, rgba(26, 54, 93, 0.05) 0%, rgba(217, 119, 6, 0.05) 100%);
@@ -1310,9 +1274,6 @@ ul, ol {
   }
 }
 
-/* ============================================ */
-/* FOOTER */
-/* ============================================ */
 .site-footer {
   background: #111827;
   color: #9ca3af;
@@ -1577,9 +1538,6 @@ ul, ol {
   gap: 0.5rem;
 }
 
-/* ============================================ */
-/* GRID LAYOUTS */
-/* ============================================ */
 .grid-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1613,9 +1571,6 @@ ul, ol {
   }
 }
 
-/* ============================================ */
-/* UTILITY CLASSES */
-/* ============================================ */
 .m-1 { margin: 8px !important; }
 .p-1 { padding: 8px !important; }
 .m-2 { margin: 16px !important; }
@@ -1631,9 +1586,6 @@ ul, ol {
 .bg-secondary { background-color: #d97706 !important; }
 .bg-accent { background-color: #10b981 !important; }
 
-/* ============================================ */
-/* ANIMATIONS */
-/* ============================================ */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -1650,7 +1602,6 @@ ul, ol {
   }
 }
 
-/* Dark Theme Support */
 :root.dark {
   --bg: #121212;
   --text: #f1f1f1;
@@ -1662,4 +1613,3 @@ body.dark {
   color: var(--text);
 }
 
-/*# sourceMappingURL=main.css.map */

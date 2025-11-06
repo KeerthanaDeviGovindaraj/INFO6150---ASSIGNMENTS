@@ -1,16 +1,14 @@
 @use "../variables" as v;
 @use "../mixins" as m;
 
-// ============================================
-// MASTER'S LEVEL BUTTON SYSTEM
-// ============================================
+
 
 .btn {
   @include m.button-base;
   position: relative;
   overflow: hidden;
   
-  // Ripple effect
+
   &::before {
     content: '';
     position: absolute;
@@ -38,7 +36,7 @@
   }
 }
 
-// Primary Button
+
 .btn-primary {
   @include m.button-variant(
     v.$color-primary,
@@ -52,7 +50,7 @@
   }
 }
 
-// Secondary Button
+
 .btn-secondary {
   @include m.button-variant(
     v.$color-secondary,
@@ -62,7 +60,6 @@
   );
 }
 
-// Outline Button
 .btn-outline {
   @include m.button-base;
   background: transparent;
@@ -76,7 +73,6 @@
   }
 }
 
-// Glass Button
 .btn-glass {
   @include m.button-base;
   @include m.glassmorphism(0.1, v.$blur-lg);
@@ -90,7 +86,6 @@
   }
 }
 
-// White Button (for dark backgrounds)
 .btn-white {
   @include m.button-variant(
     v.$color-white,
@@ -99,7 +94,6 @@
   );
 }
 
-// Button Sizes
 .btn-sm {
   padding: v.$spacing-2 v.$spacing-4;
   font-size: v.$font-size-sm;
@@ -115,7 +109,7 @@
   }
 }
 
-// Button Animations
+
 @keyframes pulse {
   0%, 100% {
     box-shadow: 0 0 0 0 rgba(v.$color-primary, 0.7);

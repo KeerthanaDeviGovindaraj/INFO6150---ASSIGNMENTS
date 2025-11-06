@@ -3,9 +3,6 @@
 @use "../functions" as f;
 @use "../mixins" as m;
 
-// ============================================
-// FOOTER - MASTER'S LEVEL
-// ============================================
 
 .site-footer {
   background: v.$color-gray-900;
@@ -34,7 +31,6 @@
   }
 }
 
-// Footer Brand
 .footer-brand {
   @include m.flex-center(column);
   align-items: flex-start;
@@ -99,7 +95,6 @@
   }
 }
 
-// Footer Links
 .footer-links {
   @include m.flex-center(column);
   align-items: flex-start;
@@ -138,7 +133,6 @@
   margin-bottom: v.$spacing-2;
 }
 
-// Newsletter
 .footer-newsletter {
   @include m.flex-center(column);
   align-items: flex-start;
@@ -201,7 +195,6 @@
   }
 }
 
-// Footer Bottom
 .footer-bottom {
   @include m.flex-between(row, center);
   padding-top: v.$spacing-8;

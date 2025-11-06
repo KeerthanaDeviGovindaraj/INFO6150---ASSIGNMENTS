@@ -10,11 +10,6 @@
 @use "utilities/helpers";
 @use "themes/dark";
 
-// ============================================
-// MASTER'S LEVEL - GLOBAL STYLES
-// ============================================
-
-// CSS Custom Properties
 :root {
   --color-primary: #{v.$color-primary};
   --color-secondary: #{v.$color-secondary};
@@ -25,7 +20,7 @@
   --radius-lg: #{v.$radius-lg};
 }
 
-// Reset & Base
+
 *,
 *::before,
 *::after {
@@ -49,9 +44,6 @@ body {
   overflow-x: hidden;
 }
 
-// ============================================
-// TYPOGRAPHY
-// ============================================
 h1, h2, h3, h4, h5, h6 {
   font-family: v.$font-display;
   font-weight: v.$font-weight-bold;
@@ -96,16 +88,10 @@ ul, ol {
   list-style: none;
 }
 
-// ============================================
-// CONTAINER
-// ============================================
 .container {
   @include m.container(v.$container-2xl);
 }
 
-// ============================================
-// NAVIGATION - Glassmorphism
-// ============================================
 .site-header {
   position: sticky;
   top: 0;
@@ -212,9 +198,6 @@ ul, ol {
   }
 }
 
-// ============================================
-// HERO SECTION - Advanced Grid
-// ============================================
 .hero-section {
   position: relative;
   padding: v.$spacing-32 0 v.$spacing-24;
@@ -473,9 +456,6 @@ ul, ol {
   50% { opacity: 1; }
 }
 
-// ============================================
-// FEATURED SECTION
-// ============================================
 .featured-section {
   padding: v.$spacing-32 0;
   background: v.$bg-secondary;
@@ -537,9 +517,6 @@ ul, ol {
   margin-top: v.$spacing-12;
 }
 
-// ============================================
-// EXPERIENCES SECTION
-// ============================================
 .experiences-section {
   padding: v.$spacing-32 0;
   
@@ -590,9 +567,6 @@ ul, ol {
   color: v.$text-secondary;
 }
 
-// ============================================
-// ABOUT SECTION
-// ============================================
 .about-section {
   position: relative;
   padding: v.$spacing-32 0;
@@ -737,9 +711,6 @@ ul, ol {
   }
 }
 
-// ============================================
-// CTA SECTION
-// ============================================
 .cta-section {
   position: relative;
   padding: v.$spacing-32 0;
@@ -797,10 +768,6 @@ ul, ol {
   font-size: v.$font-size-sm;
   color: rgba(v.$color-white, 0.8);
 }
-
-// ============================================
-// DESTINATIONS PAGE SPECIFIC
-// ============================================
 
 .destinations-hero {
   padding: v.$spacing-24 0 v.$spacing-16;
