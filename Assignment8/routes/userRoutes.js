@@ -67,7 +67,6 @@ router.post('/create', async (req, res) => {
     try {
         const { fullName, email, password } = req.body;
 
-        // Validate input data
         const validation = validateUserCreation({ fullName, email, password });
         if (!validation.isValid) {
             return res.status(400).json({
@@ -76,7 +75,6 @@ router.post('/create', async (req, res) => {
             });
         }
 
-        // Check if user already exists
         const existingUser = await User.findOne({ email: email.toLowerCase() });
         if (existingUser) {
             return res.status(400).json({
@@ -85,21 +83,17 @@ router.post('/create', async (req, res) => {
             });
         }
 
-        // Hash the password
         const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-        // Create new user
         const newUser = new User({
             fullName: fullName.trim(),
             email: email.toLowerCase().trim(),
             password: hashedPassword
         });
 
-        // Save user to database
         await newUser.save();
 
-        // Send success response
         res.status(201).json({
             message: 'User created successfully.'
         });
@@ -169,7 +163,6 @@ router.put('/edit', async (req, res) => {
     try {
         const { email, fullName, password } = req.body;
 
-        // Check if email is provided
         if (!email) {
             return res.status(400).json({
                 error: 'Validation failed.',
@@ -177,7 +170,6 @@ router.put('/edit', async (req, res) => {
             });
         }
 
-        // Find user by email
         const user = await User.findOne({ email: email.toLowerCase() });
         if (!user) {
             return res.status(404).json({
@@ -185,12 +177,10 @@ router.put('/edit', async (req, res) => {
             });
         }
 
-        // Prepare update data
         const updateData = {};
         if (fullName) updateData.fullName = fullName;
         if (password) updateData.password = password;
 
-        // Validate update data
         const validation = validateUserUpdate(updateData);
         if (!validation.isValid) {
             return res.status(400).json({
@@ -199,18 +189,15 @@ router.put('/edit', async (req, res) => {
             });
         }
 
-        // Update fullName if provided
         if (fullName) {
             user.fullName = fullName.trim();
         }
 
-        // Update password if provided (hash it first)
         if (password) {
             const saltRounds = 10;
             user.password = await bcrypt.hash(password, saltRounds);
         }
 
-        // Save updated user
         await user.save();
 
         res.status(200).json({
@@ -267,7 +254,6 @@ router.delete('/delete', async (req, res) => {
     try {
         const { email } = req.body;
 
-        // Check if email is provided
         if (!email) {
             return res.status(400).json({
                 error: 'Validation failed.',
@@ -275,7 +261,6 @@ router.delete('/delete', async (req, res) => {
             });
         }
 
-        // Find user by email
         const user = await User.findOne({ email: email.toLowerCase() });
         
         if (!user) {
@@ -284,18 +269,15 @@ router.delete('/delete', async (req, res) => {
             });
         }
 
-        // Delete associated image file if exists
         if (user.imagePath) {
             const imagePath = path.join(__dirname, '..', user.imagePath);
             
-            // Check if file exists and delete it
             if (fs.existsSync(imagePath)) {
                 fs.unlinkSync(imagePath);
                 console.log(`Deleted image file: ${imagePath}`);
             }
         }
 
-        // Delete the user
         await User.deleteOne({ email: email.toLowerCase() });
 
         res.status(200).json({
@@ -341,14 +323,12 @@ router.delete('/delete', async (req, res) => {
  */
 router.get('/getAll', async (req, res) => {
     try {
-        // Fetch all users from database
         const users = await User.find({}, 'fullName email password imagePath');
 
-        // Format the response
         const userList = users.map(user => ({
             fullName: user.fullName,
             email: user.email,
-            password: user.password  // Returns hashed password as stored
+            password: user.password  
         }));
 
         res.status(200).json({
@@ -429,40 +409,33 @@ router.post('/uploadImage', upload.single('image'), handleMulterError, async (re
     try {
         const { email } = req.body;
 
-        // Check if email is provided
         if (!email) {
             return res.status(400).json({
                 error: 'Email is required to upload image.'
             });
         }
 
-        // Check if file was uploaded
         if (!req.file) {
             return res.status(400).json({
                 error: 'No image file uploaded.'
             });
         }
 
-        // Find user by email
         const user = await User.findOne({ email: email.toLowerCase() });
         if (!user) {
-            // Delete uploaded file if user not found
             fs.unlinkSync(req.file.path);
             return res.status(404).json({
                 error: 'User not found.'
             });
         }
 
-        // Check if user already has an image
         if (user.imagePath) {
-            // Delete the newly uploaded file
             fs.unlinkSync(req.file.path);
             return res.status(400).json({
                 error: 'Image already exists for this user.'
             });
         }
 
-        // Save image path to user
         user.imagePath = `/images/${req.file.filename}`;
         await user.save();
 
@@ -472,7 +445,6 @@ router.post('/uploadImage', upload.single('image'), handleMulterError, async (re
         });
 
     } catch (error) {
-        // Delete uploaded file if error occurs
         if (req.file) {
             fs.unlinkSync(req.file.path);
         }
