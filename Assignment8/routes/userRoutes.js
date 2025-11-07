@@ -176,7 +176,7 @@ router.put('/edit', async (req, res) => {
                 error: 'User not found.'
             });
         }
-
+//modified updateData
         const updateData = {};
         if (fullName) updateData.fullName = fullName;
         if (password) updateData.password = password;
