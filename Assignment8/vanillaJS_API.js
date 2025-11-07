@@ -10,14 +10,17 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end('<h1>Home Page</h1>');
   } 
+
   else if (path === '/about' && method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end('<h1>About Page</h1>');
   }
+
   else if (path === '/api/users' && method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ users: ['Alice', 'Bob'] }));
   }
+
   else if (path === '/api/users' && method === 'POST') {
     let body = '';
 
@@ -31,6 +34,7 @@ const server = http.createServer((req, res) => {
       res.end(JSON.stringify({ message: 'User created', data }));
     });
   }
+  
   else {
     res.writeHead(404, { 'Content-Type': 'text/html' });
     res.end('<h1>404 - Page Not Found</h1>');
