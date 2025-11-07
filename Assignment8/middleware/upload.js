@@ -1,6 +1,7 @@
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const { upload, handleMulterError } = require('../middleware/upload');
 
 const imagesDir = path.join(__dirname, '../images');
 if (!fs.existsSync(imagesDir)) {
@@ -11,7 +12,7 @@ const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'images/');
     },
-    
+
     filename: function (req, file, cb) {
         try {
             const email = req.body.email;
@@ -85,6 +86,58 @@ const handleMulterError = (err, req, res, next) => {
     }
     next();
 };
+
+router.post('/uploadImage', upload.single('image'), handleMulterError, async (req, res) => {
+    try {
+        const { email } = req.body;
+
+        if (!email) {
+            return res.status(400).json({
+                error: 'Email is required to upload image.'
+            });
+        }
+
+        if (!req.file) {
+            return res.status(400).json({
+                error: 'No image file uploaded.'
+            });
+        }
+
+        const user = await User.findOne({ email: email.toLowerCase() });
+        if (!user) {
+            fs.unlinkSync(req.file.path);
+            return res.status(404).json({
+                error: 'User not found.'
+            });
+        }
+
+        if (user.imagePath) {
+            fs.unlinkSync(req.file.path);
+            return res.status(400).json({
+                error: 'Image already exists for this user.'
+            });
+        }
+
+        user.imagePath = `/images/${req.file.filename}`;
+        await user.save();
+
+        res.status(201).json({
+            message: 'Image uploaded successfully.',
+            filePath: user.imagePath
+        });
+
+    } catch (error) {
+        if (req.file) {
+            fs.unlinkSync(req.file.path);
+        }
+        console.error('Error uploading image:', error);
+        res.status(500).json({
+            error: 'Internal server error',
+            details: error.message
+        });
+    }
+});
+
 
 module.exports = {
 
