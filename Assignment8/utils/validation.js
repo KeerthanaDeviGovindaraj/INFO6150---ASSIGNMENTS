@@ -3,6 +3,7 @@
  * @param {string} email - Email address to validate
  * @returns {boolean} - True if valid, false otherwise
  */
+//mail validation
 const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -13,6 +14,7 @@ const validateEmail = (email) => {
  * @param {string} fullName - Full name to validate
  * @returns {boolean} - True if valid, false otherwise
  */
+//name validation
 const validateFullName = (fullName) => {
     const nameRegex = /^[A-Za-z\s]{2,}$/;
     return nameRegex.test(fullName);
