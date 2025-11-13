@@ -85,6 +85,7 @@ const Navbar = () => {
                     height: '3px',
                     backgroundColor: '#667eea',
                     borderRadius: '2px 2px 0 0',
+                    
                     transition: 'width 0.3s ease'
                   },
                   '&:hover': {
@@ -92,6 +93,7 @@ const Navbar = () => {
                     color: '#667eea',
                     '&::after': {
                       width: '70%'
+
                     }
                   }
                 }}
