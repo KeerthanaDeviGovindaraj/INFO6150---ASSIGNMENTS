@@ -14,9 +14,11 @@ const CompanyCard = ({ company }) => {
         overflow: 'hidden',
         transition: 'all 0.3s ease',
         '&:hover': {
+
           transform: 'translateY(-8px)',
           boxShadow: '0 20px 40px rgba(102, 126, 234, 0.15)',
           borderColor: '#667eea',
+          cursor: 'pointer'
         }
       }}
     >
