@@ -24,6 +24,7 @@ const JobCard = ({ job }) => {
         borderRadius: 3,
         border: '1px solid #E5E7EB',
         transition: 'all 0.3s ease',
+        cursor: 'pointer',
         '&:hover': {
           transform: 'translateY(-8px)',
           boxShadow: '0 20px 40px rgba(102, 126, 234, 0.15)',
@@ -52,6 +53,7 @@ const JobCard = ({ job }) => {
               color: '#10b981',
               fontWeight: 700,
               fontSize: '1.1rem'
+
             }}
           >
             {job.salary}
@@ -145,7 +147,7 @@ const JobCard = ({ job }) => {
             transition: 'all 0.3s ease'
           }}
         >
-          Apply Now
+          Apply Now!
         </Button>
       </CardActions>
     </Card>
