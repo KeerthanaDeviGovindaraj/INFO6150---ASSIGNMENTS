@@ -7,10 +7,9 @@ import { setJobs, setLoading, setError } from '../../store/slices/jobSlice';
 const Jobs = () => {
   const dispatch = useDispatch();
   const { jobs, loading, error } = useSelector((state) => state.jobs);
-  
-  // Pagination state
+
   const [currentPage, setCurrentPage] = useState(1);
-  const jobsPerPage = 6; // Show 6 jobs per page
+  const jobsPerPage = 6;
 
   useEffect(() => {
     fetchJobs();
@@ -27,13 +26,11 @@ const Jobs = () => {
     }
   };
 
-  // Calculate pagination
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
   const currentJobs = jobs.slice(indexOfFirstJob, indexOfLastJob);
   const totalPages = Math.ceil(jobs.length / jobsPerPage);
 
-  // Change page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
     window.scrollTo({ top: 0, behavior: 'smooth' });
