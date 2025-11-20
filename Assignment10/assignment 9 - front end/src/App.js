@@ -2,12 +2,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { useSelector } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Import components
 import Navbar from './components/Navbar/Navbar';
 import AdminRoute from './components/AdminRoute';
 import EmployeeRoute from './components/EmployeeRoute';
 
-// Import pages
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
@@ -15,11 +13,9 @@ import Login from './pages/Login/Login';
 import CompanyShowcase from './pages/CompanyShowcase/CompanyShowcase';
 import JobListings from './pages/JobListings/JobListings';
 
-// Import Admin pages
 import Employees from './pages/Admin/Employees';
 import AddJob from './pages/Admin/AddJob';
 
-// Import Employee pages
 import Jobs from './pages/Employee/Jobs';
 
 function App() {
