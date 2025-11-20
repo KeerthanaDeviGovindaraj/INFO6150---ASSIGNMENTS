@@ -16,7 +16,6 @@ axios.interceptors.request.use(
 );
 
 export const apiService = {
-  // Login user
   loginUser: async (credentials) => {
     try {
       const response = await axios.post(`${API_URL}/login`, credentials);
@@ -32,7 +31,6 @@ export const apiService = {
     }
   },
 
-  // Get company images (Assignment 9)
   getCompanyImages: async () => {
     try {
       const response = await axios.get(`${API_URL}/companies/images`);
@@ -48,7 +46,6 @@ export const apiService = {
     }
   },
   
-  // Get all users (excludes passwords)
   getAllUsers: async () => {
     try {
       const response = await axios.get(`${API_URL}/users`);
@@ -61,7 +58,6 @@ export const apiService = {
     }
   },
 
-  // Create job (Admin only)
   createJob: async (jobData) => {
     try {
       const response = await axios.post(`${API_URL}/create/job`, jobData);
@@ -74,7 +70,6 @@ export const apiService = {
     }
   },
 
-  // Get all jobs
   getAllJobs: async () => {
     try {
       const response = await axios.get(`${API_URL}/jobs`);
