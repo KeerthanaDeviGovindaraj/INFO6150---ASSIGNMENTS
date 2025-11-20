@@ -1,0 +1,593 @@
+{
+	"info": {
+		"_postman_id": "211a0f5f-7117-41b5-9d01-18a31d30f22c",
+		"name": "Assignment 8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47462297",
+		"_collection_link": "https://keerthanadevig28-4936475.postman.co/workspace/eae38183-a915-42ec-8e29-8f160f4ef508/collection/47462297-211a0f5f-7117-41b5-9d01-18a31d30f22c?action=share&source=collection_link&creator=47462297"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/user/create",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Carol White\",\r\n    \"email\": \"carol@example.com\",\r\n    \"password\": \"Password123\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/getAll",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"getAll"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3000/user/create",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Carol White\",\r\n    \"email\": \"carol@example.com\",\r\n    \"password\": \"Password123\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"getAll"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "377"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"179-909yfH2EoINrZiiiCRU752K4EZI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Nov 2025 21:02:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"users\": [\n        {\n            \"fullName\": \"Kee\",\n            \"email\": \"kee@example.com\",\n            \"password\": \"$2b$10$SbJ5mwK6pSWDgL348T3cF..OWL9o7Cl0qrCrsZ2XsAE9sSagY8d2O\"\n        },\n        {\n            \"fullName\": \"Test\",\n            \"email\": \"test1@example.com\",\n            \"password\": \"$2b$10$bFpdJuLn2dCEfenXqHMGoODV2kblsfH3T6bYAnIk1et58WwPEs3YK\"\n        },\n        {\n            \"fullName\": \"John Doe\",\n            \"email\": \"john@example.com\",\n            \"password\": \"$2b$10$DhL9dGSi4r1wchX2vbHevO80/6PP640Wq9vQFJ5bZF64hB5FS7kRe\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "http://localhost:3000/user/create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Carol White\",\r\n    \"email\": \"carol@example.com\",\r\n    \"password\": \"Password123\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "130"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"82-DzXAGDqloinKZomww8UmvR+T4n8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Nov 2025 21:05:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Validation failed.\",\n    \"details\": [\n        \"Password must contain at least one special character (!@#$%^&*()_+-=[]{};':\\\"|,.<>/?)\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "getAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/getAll",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Carol White\",\r\n    \"email\": \"carol@example.com\",\r\n    \"password\": \"Password@123\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/create",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user ",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test1@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/delete",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user ",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"alice@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/delete",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"delete"
+					]
+				},
+				"description": "user not found"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user ",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Alice Johnson\",\r\n    \"email\": \"invalid-email\",\r\n    \"password\": \"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/create",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"create"
+					]
+				},
+				"description": "missing email\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User ",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Alice Johnson\",\r\n    \"email\": \"invalid-email\",\r\n    \"password\": \"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/create",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"create"
+					]
+				},
+				"description": "Invalid email"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User ",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Alice Johnson 123\",\r\n    \"email\": \"invalid-email\",\r\n    \"password\": \"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/create",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"create"
+					]
+				},
+				"description": "Invalid name"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Another Alice\",\r\n    \"email\": \"alice@example.com\",\r\n    \"password\": \"Pass@456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/create",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"create"
+					]
+				},
+				"description": "Duplicate email"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Eve Green\",\r\n    \"email\": \"eve@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/create",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"create"
+					]
+				},
+				"description": "Missing fields"
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"alice@example.com\",\r\n    \"fullName\": \"Alice Smith\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/edit",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"nonexistent@example.com\",\r\n    \"fullName\": \"Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/edit",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"edit"
+					]
+				},
+				"description": "user not found"
+			},
+			"response": []
+		},
+		{
+			"name": "Upload",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "kee@example.com",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/keert/OneDrive/Desktop/API/images/download.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/uploadImage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"uploadImage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "kee@example.com",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": [
+								"/C:/Users/keert/OneDrive/Desktop/API/images/download.jpg",
+								"/C:/Users/keert/OneDrive/Desktop/Pdf.pdf"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/uploadImage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"uploadImage"
+					]
+				},
+				"description": "Invalid file format "
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

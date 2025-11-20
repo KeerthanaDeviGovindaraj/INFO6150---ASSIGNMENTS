@@ -1,0 +1,5 @@
+{
+  "ignore": ["node_modules", "images/*", "*.log"],
+  "delay": 2000
+}
+
