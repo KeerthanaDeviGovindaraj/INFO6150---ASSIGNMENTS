@@ -1,11 +1,9 @@
 const Job = require('../models/Job');
 
-// Create new job (Admin only)
 const createJob = async (req, res) => {
   try {
     const { companyName, jobTitle, description, salary } = req.body;
 
-    // Validate all fields
     if (!companyName || !jobTitle || !description || !salary) {
       return res.status(400).json({ 
         error: 'All fields are required',
@@ -13,7 +11,6 @@ const createJob = async (req, res) => {
       });
     }
 
-    // Create new job
     const newJob = new Job({
       companyName,
       jobTitle,
@@ -37,7 +34,6 @@ const createJob = async (req, res) => {
   }
 };
 
-// Get all jobs
 const getAllJobs = async (req, res) => {
   try {
     const jobs = await Job.find().sort({ createdAt: -1 });
