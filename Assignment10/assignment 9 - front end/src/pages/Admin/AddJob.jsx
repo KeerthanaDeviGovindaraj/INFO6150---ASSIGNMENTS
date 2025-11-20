@@ -24,7 +24,6 @@ const AddJob = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
-    // Clear messages on input
     setError('');
     setSuccess('');
   };
@@ -40,13 +39,12 @@ const AddJob = () => {
         ...formData,
         salary: Number(formData.salary)
       });
-      
-      // Add job to Redux store
+
       dispatch(addJob(response.job));
       
       setSuccess('Job created successfully!');
       
-      // Reset form
+
       setFormData({
         companyName: '',
         jobTitle: '',
@@ -54,7 +52,6 @@ const AddJob = () => {
         salary: ''
       });
 
-      // Redirect after 2 seconds
       setTimeout(() => {
         navigate('/admin/employees');
       }, 2000);
